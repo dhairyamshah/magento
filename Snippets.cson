@@ -1,0 +1,13 @@
+'.source.php':
+  'clear cach':
+    'prefix': 'clearcach'
+    'body': 'Mage::app()->removeCache("catalog_rules_dirty");'
+  'reindex price':
+    'prefix': 'pricereindex'
+    'body': 'Mage::getModel("index/process")->load(2)->reindexEverything();'
+  'load products by cat id':
+    'prefix': 'loadproductsbycatid'
+    'body': '$_category = Mage::getModel("catalog/category")->load(47);$_productCollection = $_category->getProductCollection();'
+  'get config var':
+    'prefix': 'getconfig'
+    'body': 'Mage::getStoreConfig("[MODULE]/[SECTION]/[FIELD]", $storeId);'
